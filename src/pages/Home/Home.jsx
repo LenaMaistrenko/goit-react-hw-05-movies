@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchTrendingMovies } from '../../services/fetchMovies';
-import { Title, Main, StyledUl } from '../../pages/Home/Home.styled';
-import { Link } from 'react-router-dom';
+import { Title, Main, StyleLink, StyledUl } from '../../pages/Home/Home.styled';
 
 export function Home() {
   const [movies, setMovies] = useState([]);
@@ -20,7 +19,7 @@ export function Home() {
         {movies.map(movie => {
           return (
             <li key={movie.id}>
-              <Link to={`movies/${movie.id}`}>{movie.title}</Link>
+              <StyleLink to={`movies/${movie.id}`}>{movie.title}</StyleLink>
             </li>
           );
         })}

@@ -11,7 +11,7 @@ export function Reviews() {
       setReviewsById(data);
     });
   }, [movieId]);
-  console.log('reviewsById.length', reviewsById.length);
+  // console.log('reviewsById.length', reviewsById.length);
   return reviewsById.length > 0 ? (
     <ul>
       {reviewsById.length > 0 &&

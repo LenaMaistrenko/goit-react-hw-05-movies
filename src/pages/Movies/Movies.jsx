@@ -7,7 +7,7 @@ export function Movies() {
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query') ?? '';
-  //   const location = useLocation();
+
   const handleSubmit = query => {
     setSearchParams(query !== '' ? { query: query } : {});
   };
@@ -15,7 +15,6 @@ export function Movies() {
   useEffect(() => {
     if (searchQuery === null) return;
     fetchMoviesBySearch(searchQuery).then(data => {
-      console.log(data);
       setSearchMovies(data);
     });
   }, [searchQuery]);

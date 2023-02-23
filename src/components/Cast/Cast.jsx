@@ -1,18 +1,17 @@
 import { fetchMovieCredits } from '../../services/fetchMovies';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 export function Cast() {
   const [movieById, setMovieById] = useState([]);
   const { movieId } = useParams();
-  //   console.log('>>>>>', movieId);
 
   useEffect(() => {
-    const result = fetchMovieCredits(movieId).then(data => {
+    fetchMovieCredits(movieId).then(data => {
       setMovieById(data);
-      console.log(data);
-      console.log(movieById);
     });
-  }, []);
+  }, [movieId]);
+
   return (
     <>
       <ul>
